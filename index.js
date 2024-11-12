@@ -25,7 +25,7 @@ app.get('/api/send-email', async (req, res) => {
 
     console.log('Correo enviado.1:');
 
-    res.json({ message: 'Correo enviado correctamente', data: response });
+    res.json({ message: 'Correo enviado correctamente', data: response1  });
   } catch (error) {
     console.error('Error enviando correo:', error);
     res.status(500).json({ message: 'Error al enviar el correo', error: error.message });
