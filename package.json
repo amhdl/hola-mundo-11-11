@@ -2,11 +2,10 @@
   "name": "node-starter",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node index.js"
+    "build": "echo 'No build step required'",
+    "start": "vercel dev"
   },
   "dependencies": {
-    "express": "^4.21.1",
     "resend": "^4.0.1-alpha.0"
   }
 }
