@@ -10,7 +10,29 @@
     <button id="fetchMessage">Get Message</button>
     <p id="message"></p>
 
+
+    -----------
+
+    <button id="sendEmailBtn">Enviar Correo</button>
+    <p id="responseMessage"></p>
+
     <script>
+document.getElementById('sendEmailBtn').addEventListener('click', async () => {
+      try {
+        // Hacer una solicitud a la API para enviar el correo
+        const response = await fetch('/api/send-email');
+        const data = await response.json();
+
+        // Mostrar la respuesta del servidor
+        document.getElementById('responseMessage').textContent = data.message;
+      } catch (error) {
+        // Mostrar mensaje de error si algo falla
+        document.getElementById('responseMessage').textContent = "Error enviando correo.";
+        console.error(error);
+      }
+    });
+
+
       document
         .getElementById('fetchMessage')
         .addEventListener('click', async () => {
